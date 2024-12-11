@@ -31,7 +31,6 @@
       margin-bottom: 20px;
       position: relative;
       border: 2px solid white;
-      
     }
     .progress-bar {
       height: 100%;
@@ -186,31 +185,6 @@
         question: "Are points that divided a distribution into four equal parts.",
         options: ["Quartiles", "Deciles", "Percentiles", "Grouped data"],
         correct: 0
-      },
-      {
-        question: "Refers to the statistical association between two variables.",
-        options: ["Correlation", "Sampling distribution", "Grouped data"],
-        correct: 0
-      },
-      {
-        question: "It is also called Gaussian Distribution.",
-        options: ["Sampling distribution", "Standard normal distribution", "Probability distribution"],
-        correct: 1
-      },
-      {
-        question: "Which is not a property of a normal distribution?",
-        options: ["The mean, mode and median are all equal", "The curve is symmetric at the center", "The total area under the curve is 100"],
-        correct: 2
-      },
-      {
-        question: "What are quartiles and how do they divide a data set?",
-        options: ["Quartile divide a sorted dataset into four parts.", "Forgets a crucial step sorting the data quartiles are based on the sorted order of the data.", "The second quartile is the median of the entire dataset not the average."],
-        correct: 0
-      },
-      {
-        question: "What is the term used to describe data points that are significantly different from others?",
-        options: ["Quartiles", "Outliers", "Deciles", "Mean"],
-        correct: 1
       }
     ];
 
@@ -242,7 +216,7 @@
       optionsElement.innerHTML = "";
       progressBar.style.width = "100%";
       progressBar.classList.remove("almost-done");
-      questionNumber.textContent = Question ${currentQuestion + 1}/${questions.length};
+      questionNumber.textContent = `Question ${currentQuestion + 1}/${questions.length}`;
 
       const current = questions[currentQuestion];
       questionElement.textContent = current.question;
@@ -258,7 +232,7 @@
       let timeLeft = 10;
       timer = setInterval(() => {
         timeLeft--;
-        progressBar.style.width = ${(timeLeft / 10) * 100}%;
+        progressBar.style.width = `${(timeLeft / 10) * 100}%`;
         if (timeLeft <= 3) {
           progressBar.classList.add("almost-done");
         }
